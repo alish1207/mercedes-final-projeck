@@ -1,0 +1,99 @@
+.page { min-height: 100vh; }
+
+.hero {
+  position: relative; padding: 80px 24px 64px;
+  border-bottom: 1px solid var(--border); overflow: hidden;
+}
+.heroInner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+.eye { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+.heroTitle { font-size: clamp(38px, 7vw, 76px); font-weight: 700; line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 20px; }
+.teal { color: var(--teal); }
+.heroSub { font-size: 16px; color: var(--muted); max-width: 400px; }
+
+.heroLine {
+  position: absolute; right: 5%; top: 0; bottom: 0; width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--teal), transparent);
+  opacity: 0.2;
+}
+.heroLine::before {
+  content: ''; position: absolute; right: -100px; top: 0; bottom: 0; width: 100px;
+  background: linear-gradient(to right, transparent, rgba(0,210,190,0.03));
+}
+
+.catalog { padding: 40px 0 80px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Toolbar */
+.toolbar { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+.searchForm { position: relative; flex: 1; min-width: 200px; }
+.searchInput { padding-right: 44px !important; }
+.searchBtn {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; color: var(--muted); cursor: pointer; padding: 0;
+  transition: color 0.2s;
+}
+.searchBtn:hover { color: var(--teal); }
+.sortSelect { width: 140px; background: var(--surface2); cursor: pointer; }
+
+/* Filters */
+.filters { display: flex; gap: 8px; margin-bottom: 36px; flex-wrap: wrap; }
+.filter {
+  background: transparent; color: var(--muted); border: 1px solid var(--border);
+  font-size: 12px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 8px 18px; border-radius: var(--r); cursor: pointer; transition: all 0.2s;
+}
+.filter:hover { border-color: var(--teal); color: var(--teal); }
+.filterActive { composes: filter; background: var(--teal); color: #000; border-color: var(--teal); }
+
+/* Grid */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 24px; }
+
+.state { padding: 80px 0; text-align: center; color: var(--muted); }
+.state code { background: var(--surface2); padding: 2px 8px; border-radius: 4px; color: var(--teal); font-size: 13px; }
+
+/* Filter toggle button */
+.filterToggle {
+  background: var(--surface2); border: 1px solid var(--border); color: var(--muted);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.05em;
+  padding: 0 16px; height: 46px; border-radius: var(--r); cursor: pointer;
+  display: flex; align-items: center; gap: 8px; white-space: nowrap;
+  transition: all 0.2s;
+}
+.filterToggle:hover { border-color: var(--teal); color: var(--teal); }
+.filterToggleActive { border-color: var(--teal); color: var(--teal); }
+.filterDot { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; display: inline-block; }
+
+/* Filters panel */
+.filtersPanel {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--rl); padding: 20px 24px;
+  margin-bottom: 24px; display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start;
+}
+.filterGroup { display: flex; flex-direction: column; gap: 10px; }
+.filterLabel { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+/* Price range */
+.rangeRow { display: flex; align-items: center; gap: 8px; }
+.range { width: 120px; accent-color: var(--teal); cursor: pointer; }
+.rangeHint { font-size: 12px; color: var(--muted); }
+
+/* Size picker */
+.sizePicker { display: flex; gap: 6px; flex-wrap: wrap; }
+.size {
+  background: var(--surface2); border: 1px solid var(--border);
+  color: var(--muted); font-size: 12px; font-weight: 600;
+  padding: 5px 12px; border-radius: 3px; cursor: pointer; transition: all 0.15s;
+}
+.size:hover { border-color: var(--teal); color: var(--teal); }
+.sizeActive { composes: size; border-color: var(--teal); color: var(--teal); background: rgba(0,210,190,0.1); }
+
+.resetBtn {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--muted); font-size: 12px; font-weight: 600;
+  padding: 6px 16px; border-radius: var(--r); cursor: pointer;
+  transition: all 0.2s; letter-spacing: 0.05em; text-transform: uppercase;
+}
+.resetBtn:hover { border-color: var(--error); color: var(--error); }
+
+/* Count */
+.count { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
